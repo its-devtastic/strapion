@@ -1,0 +1,16 @@
+{
+  "name": "@strapion/core",
+  "version": "1.0.0",
+  "description": "Strapion core components.",
+  "main": "index",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT",
+  "author": "Devtastic <hi@devtastic.co>",
+  "maintainers": [{
+    "name": "Leon van der Grient",
+    "url": "https://github.com/StructuralRealist",
+    "email": "leon@devtastic.co"
+  }]
+}
