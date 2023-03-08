@@ -4,15 +4,10 @@ import * as R from "ramda";
 import { useTranslation } from "react-i18next";
 import { useEffectOnce } from "react-use";
 import { useRouter } from "next/navigation";
+import { useStrapion, useStrapi, Spinner, CalendarTime } from "@strapion/core";
 
-import { SORTABLE_FIELD_TYPES } from "~/../../../../../strapion/packages/core/utils/constants";
-
-import useStrapi from "~/hooks/useStrapi";
-import useStrapionConfig from "~/hooks/useStrapionConfig";
-import useContentListManager from "~/hooks/useContentListManager";
-
-import Spinner from "~/components/Spinner";
-import CalendarTime from "~/components/CalendarTime";
+import { SORTABLE_FIELD_TYPES } from "../../utils/constants";
+import useContentListManager from "../../hooks/useContentListManager";
 
 import FilterToolbar from "./FilterToolbar";
 
@@ -26,8 +21,8 @@ const ListScreen: React.FC<{ params: Record<string, string> }> = ({
   const { items, pagination, fetch, sort, setSort, setPage } =
     useContentListManager();
   const contentType = contentTypes.find(R.whereEq({ apiID }));
-  const contentTypeConfig = useStrapionConfig((state) =>
-    state.contentTypes.find(R.whereEq({ apiID }))
+  const contentTypeConfig = useStrapion((state) =>
+    state.config.contentTypes.find(R.whereEq({ apiID }))
   );
   const hasDraftState = contentType?.options.draftAndPublish;
   const name = contentTypeConfig?.name ?? contentType?.info.displayName ?? "";

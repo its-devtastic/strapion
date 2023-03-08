@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Button, Input } from "antd";
 import { useTranslation } from "react-i18next";
 import { ReloadOutlined } from "@ant-design/icons";
+import { LanguageSelect } from "@strapion/core";
 
-import LanguageSelect from "~/components/LanguageSelect";
-import useContentListManager from "~/hooks/useContentListManager";
+import useContentListManager from "../../hooks/useContentListManager";
 
 const FilterToolbar: React.FC<{ apiID: string }> = ({ apiID }) => {
   const { t } = useTranslation();
