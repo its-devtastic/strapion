@@ -1,6 +1,6 @@
 {
   "name": "@strapion/content-manager",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Content Manager plugin for Strapion.",
   "main": "index",
   "scripts": {
@@ -8,9 +8,23 @@
   },
   "license": "MIT",
   "author": "Devtastic <hi@devtastic.co>",
-  "maintainers": [{
-    "name": "Leon van der Grient",
-    "url": "https://github.com/StructuralRealist",
-    "email": "leon@devtastic.co"
-  }]
+  "maintainers": [
+    {
+      "name": "Leon van der Grient",
+      "url": "https://github.com/StructuralRealist",
+      "email": "leon@devtastic.co"
+    }
+  ],
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.3.0",
+    "@strapion/core": "^0.1.1",
+    "formik": "^2.2.9",
+    "ramda": "^0.28.0",
+    "react": "^18.2.0",
+    "react-use": "^17.4.0"
+  },
+  "devDependencies": {
+    "@types/ramda": "^0.28.23",
+    "@types/react": "^18.0.28"
+  }
 }
