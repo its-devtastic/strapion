@@ -1,16 +1,40 @@
 {
   "name": "@strapion/core",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Strapion core components.",
   "main": "index",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "license": "MIT",
-  "author": "Devtastic <hi@devtastic.co>",
-  "maintainers": [{
-    "name": "Leon van der Grient",
-    "url": "https://github.com/StructuralRealist",
-    "email": "leon@devtastic.co"
-  }]
+  "author": "Devtastic <hi@devtastic.build>",
+  "maintainers": [
+    {
+      "name": "Leon van der Grient",
+      "url": "https://github.com/StructuralRealist",
+      "email": "leon@devtastic.co"
+    }
+  ],
+  "dependencies": {
+    "@ant-design/icons": "^5.0.1",
+    "antd": "^5.3.0",
+    "axios": "^1.3.4",
+    "classnames": "^2.3.2",
+    "dayjs": "^1.11.7",
+    "flag-icons": "^6.6.6",
+    "ramda": "^0.28.0",
+    "react": "^18.2.0",
+    "react-use": "^17.4.0",
+    "url-pattern": "^1.0.3",
+    "zustand": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^18.14.6",
+    "@types/ramda": "^0.28.23",
+    "@types/react": "^18.0.28"
+  },
+  "peerDependencies": {
+    "next": "^13.2.3",
+    "react-i18next": "^12.2.0"
+  }
 }
