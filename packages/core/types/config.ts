@@ -1,8 +1,8 @@
 import React from "react";
 import { ThemeConfig } from "antd";
 
-import { ContentTypeConfig } from "~/types/contentTypeConfig";
-import { StrapionPlugin } from "~/types/plugin";
+import { ContentTypeConfig } from "./contentTypeConfig";
+import { StrapionPlugin } from "./plugin";
 
 export interface StrapionConfig {
   icon?: string;

@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import dayjs from "dayjs";
+import { ConfigProvider } from "antd";
+import * as R from "ramda";
 
 // Day.js plugins
 import relativeTime from "dayjs/plugin/relativeTime";
@@ -32,7 +34,13 @@ const StrapionProvider: React.FC<{
     [strapionConfig]
   );
 
-  return <>{config && children}</>;
+  return (
+    <>
+      {!R.isEmpty(config) ? (
+        <ConfigProvider theme={config.theme}>{children}</ConfigProvider>
+      ) : null}
+    </>
+  );
 };
 
 export default StrapionProvider;

@@ -1,4 +1,4 @@
-import { StrapionConfig } from "~/types/config";
+import { StrapionConfig } from "./config";
 
 export interface StrapionPlugin {
   (config: StrapionConfig): StrapionConfig;
