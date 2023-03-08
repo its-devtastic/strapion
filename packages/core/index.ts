@@ -5,6 +5,7 @@ export { default as AuthGuard } from "./ui/AuthGuard";
 export { default as CalendarTime } from "./ui/CalendarTime";
 export { default as MainMenu } from "./ui/MainMenu";
 export { default as Spinner } from "./ui/Spinner";
+export { default as LanguageSelect } from "./ui/LanguageSelect";
 
 // Providers
 export { default as StrapiProvider } from "./providers/StrapiProvider";

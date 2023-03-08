@@ -9,7 +9,7 @@ export interface StrapionConfig {
   zones: InjectionZoneEntry[];
   contentTypes: ContentTypeConfig[];
   pages: Record<string, React.FC<{ params: Record<string, string> }>>;
-  theme: ThemeConfig;
+  theme: Partial<ThemeConfig>;
   plugins: StrapionPlugin[];
 }
 
