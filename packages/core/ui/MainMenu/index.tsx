@@ -1,7 +1,6 @@
 import React from "react";
 import * as R from "ramda";
-import Image from "next/image";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 
 import { InjectionZone } from "../../types/config";
 import useStrapion from "../../hooks/useStrapion";
@@ -28,8 +27,8 @@ const MainMenu: React.FC & {
   return (
     <nav className="py-3 w-16 bg-slate-100 flex flex-col items-center justify-between">
       <div className="space-y-4">
-        <Link href="/" className="flex">
-          {icon && <Image height={40} width={40} src={icon} alt="" />}
+        <Link to="/" className="flex">
+          {icon && <img className="h-10 w-10" src={icon} alt="" />}
         </Link>
         {menuItems
           .filter(R.whereEq({ zone: InjectionZone.MainMenuTop }))

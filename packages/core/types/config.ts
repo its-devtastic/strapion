@@ -5,6 +5,7 @@ import { ContentTypeConfig } from "./contentTypeConfig";
 import { StrapionPlugin } from "./plugin";
 
 export interface StrapionConfig {
+  strapiUrl: string;
   icon?: string;
   zones: InjectionZoneEntry[];
   contentTypes: ContentTypeConfig[];

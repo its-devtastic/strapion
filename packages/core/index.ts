@@ -1,3 +1,6 @@
+export { default as Strapion } from "./Strapion";
+
+// Utils
 export { default as api } from "./utils/api";
 
 // UI
