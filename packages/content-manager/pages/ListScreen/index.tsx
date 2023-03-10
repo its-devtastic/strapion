@@ -3,7 +3,7 @@ import { Badge, Button, Dropdown, Image, Table, Tooltip } from "antd";
 import * as R from "ramda";
 import { useTranslation } from "react-i18next";
 import { useEffectOnce } from "react-use";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import { useStrapion, useStrapi, Spinner, CalendarTime } from "@strapion/core";
 
 import { SORTABLE_FIELD_TYPES } from "../../utils/constants";
@@ -15,7 +15,7 @@ const ListScreen: React.FC<{ params: Record<string, string> }> = ({
   params,
 }) => {
   const { t } = useTranslation();
-  const router = useRouter();
+  const navigate = useNavigate();
   const apiID = params.apiID;
   const { contentTypes } = useStrapi();
   const { items, pagination, fetch, sort, setSort, setPage } =
@@ -52,7 +52,7 @@ const ListScreen: React.FC<{ params: Record<string, string> }> = ({
         rowKey="id"
         showSorterTooltip={false}
         onRow={(record) => ({
-          onClick: () => router.push(`/content-manager/article/${record.id}`),
+          onClick: () => navigate(`/content-manager/article/${record.id}`),
         })}
         rowClassName="cursor-pointer"
         columns={[

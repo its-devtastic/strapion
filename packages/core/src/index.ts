@@ -1,8 +1,5 @@
 export { default as Strapion } from "./Strapion";
 
-// Utils
-export { default as api } from "./utils/api";
-
 // UI
 export { default as AuthGuard } from "./ui/AuthGuard";
 export { default as CalendarTime } from "./ui/CalendarTime";

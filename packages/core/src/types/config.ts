@@ -1,5 +1,6 @@
 import React from "react";
 import { ThemeConfig } from "antd";
+import { RouteObject } from "react-router-dom";
 
 import { ContentTypeConfig } from "./contentTypeConfig";
 import { StrapionPlugin } from "./plugin";
@@ -9,10 +10,13 @@ export interface StrapionConfig {
   icon?: string;
   zones: InjectionZoneEntry[];
   contentTypes: ContentTypeConfig[];
-  pages: Record<string, React.FC<{ params: Record<string, string> }>>;
+  routes: RouteObject[];
   theme: Partial<ThemeConfig>;
   plugins: StrapionPlugin[];
 }
+
+export type StrapionConfigWithOptionals = Pick<StrapionConfig, "strapiUrl"> &
+  Partial<Omit<StrapionConfig, "strapiUrl">>;
 
 export interface InjectionZoneEntry {
   zone: InjectionZone;

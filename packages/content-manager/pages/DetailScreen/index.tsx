@@ -5,7 +5,7 @@ import * as R from "ramda";
 import { useTranslation } from "react-i18next";
 import { useEffectOnce } from "react-use";
 import { Field, Formik } from "formik";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 
 import {
   useStrapion,

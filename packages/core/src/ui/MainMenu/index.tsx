@@ -10,17 +10,16 @@ import MainMenuItem from "./MainMenuItem";
 const MainMenu: React.FC & {
   Item: typeof MainMenuItem;
 } = () => {
-  const icon = useStrapion((state) => state.config.icon);
-  const menuItems = useStrapion((state) =>
-    R.sortBy(R.prop("weight"))(
-      state.config.zones.filter(
-        R.where({
-          zone: (zone: InjectionZone) =>
-            [InjectionZone.MainMenuTop, InjectionZone.MainMenuBottom].includes(
-              zone
-            ),
-        })
-      )
+  const config = useStrapion();
+  const icon = config.icon;
+  const menuItems = R.sortBy(R.prop("weight"))(
+    config.zones.filter(
+      R.where({
+        zone: (zone: InjectionZone) =>
+          [InjectionZone.MainMenuTop, InjectionZone.MainMenuBottom].includes(
+            zone
+          ),
+      })
     )
   );
 

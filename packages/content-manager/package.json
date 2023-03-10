@@ -17,12 +17,13 @@
   ],
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.3.0",
-    "@strapion/core": "^0.1.2",
+    "@strapion/core": "^0.2.0",
     "formik": "^2.2.9",
     "i18next": "^22.4.11",
     "ramda": "^0.28.0",
     "react": "^18.2.0",
-    "react-use": "^17.4.0"
+    "react-use": "^17.4.0",
+    "zustand": "^4.3.6"
   },
   "devDependencies": {
     "@types/ramda": "^0.28.23",

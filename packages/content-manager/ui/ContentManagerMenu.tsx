@@ -1,7 +1,7 @@
 import React from "react";
 import { useAsync } from "react-use";
 import * as R from "ramda";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { api, Spinner, useStrapion } from "@strapion/core";
 import { ContentType } from "@strapion/core/types/contentType";
@@ -48,7 +48,7 @@ const ContentManagerMenu: React.FC<{
                     return (
                       <Link
                         key={apiID}
-                        href={`/content-manager/${apiID}`}
+                        to={`/content-manager/${apiID}`}
                         className="group flex gap-2 hover:bg-slate-100 rounded-lg p-3"
                       >
                         {config?.icon && (
