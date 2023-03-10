@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  createBrowserRouter,
-  redirect,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import dayjs from "dayjs";
 
 // Day.js plugins
@@ -46,7 +42,12 @@ const Strapion: React.FC<StrapionConfigWithOptionals> = (props) => {
       path: "/",
       loader: async () => {
         if (!auth) {
-          redirect("/login");
+          return new Response("", {
+            status: 302,
+            headers: {
+              Location: "/login",
+            },
+          });
         }
         return null;
       },
