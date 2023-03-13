@@ -1,12 +1,19 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import dayjs from "dayjs";
+import i18n from "i18next";
+import { I18nextProvider, initReactI18next } from "react-i18next";
+import { useEffectOnce } from "react-use";
 
 // Day.js plugins
 import relativeTime from "dayjs/plugin/relativeTime";
 import calendar from "dayjs/plugin/calendar";
 import localeData from "dayjs/plugin/localeData";
 import localizedFormat from "dayjs/plugin/localizedFormat";
+
+// i18n resources
+import en from "./i18n/en.json";
+import nl from "./i18n/nl.json";
 
 import { StrapionConfigWithOptionals } from "./types/config";
 
@@ -57,12 +64,32 @@ const Strapion: React.FC<StrapionConfigWithOptionals> = (props) => {
     { path: "/login", element: <Login /> },
   ]);
 
+  useEffectOnce(() => {
+    i18n.use(initReactI18next).init({
+      fallbackLng: "en",
+      defaultNS: "translations",
+      interpolation: {
+        escapeValue: false,
+      },
+      resources: {
+        en: {
+          translations: en,
+        },
+        nl: {
+          translations: en,
+        },
+      },
+    });
+  });
+
   return (
-    <StrapionProvider config={configAfterPlugins}>
-      <StrapiProvider apiUrl={props.strapiUrl}>
-        <RouterProvider router={router} />
-      </StrapiProvider>
-    </StrapionProvider>
+    <I18nextProvider i18n={i18n}>
+      <StrapionProvider config={configAfterPlugins}>
+        <StrapiProvider apiUrl={props.strapiUrl}>
+          <RouterProvider router={router} />
+        </StrapiProvider>
+      </StrapionProvider>
+    </I18nextProvider>
   );
 };
 
