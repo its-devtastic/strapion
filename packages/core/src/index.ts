@@ -18,3 +18,12 @@ export { default as useStrapion } from "./hooks/useStrapion";
 
 // Enums
 export { InjectionZone } from "./types/config";
+
+export { useTranslation } from "react-i18next";
+export {
+  Link,
+  useNavigate,
+  useParams,
+  useSearchParams,
+  useHref,
+} from "react-router-dom";
