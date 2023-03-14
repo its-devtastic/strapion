@@ -1,6 +1,5 @@
 import React from "react";
 import { ThemeConfig } from "antd";
-import { RouteObject } from "react-router-dom";
 
 import { ContentTypeConfig } from "./contentTypeConfig";
 import { StrapionPlugin } from "./plugin";
@@ -10,7 +9,7 @@ export interface StrapionConfig {
   icon?: string;
   zones: InjectionZoneEntry[];
   contentTypes: ContentTypeConfig[];
-  routes: RouteObject[];
+  routes: { path: string; element: React.ReactNode }[];
   theme: Partial<ThemeConfig>;
   i18n: Record<string, Record<"translation", Record<string, string>>>;
   plugins: StrapionPlugin[];

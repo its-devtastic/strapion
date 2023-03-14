@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 
 import useSession from "../../hooks/useSession";
 
@@ -10,17 +10,17 @@ const AuthGuard: React.FC<AuthGuardProps> = ({
   children,
   anonOnly = false,
 }) => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const { token } = useSession();
 
   useEffect(() => {
     if (!token && !anonOnly) {
-      navigate("/login");
+      router.push("/login");
     }
     if (token && anonOnly) {
-      navigate("/");
+      router.push("/");
     }
-  }, [navigate, token]);
+  }, [router, token]);
 
   return <>{children}</>;
 };

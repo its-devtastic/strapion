@@ -1,6 +1,6 @@
 import React from "react";
 import * as R from "ramda";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 import { InjectionZone } from "../../types/config";
 import useStrapion from "../../hooks/useStrapion";
@@ -26,7 +26,7 @@ const MainMenu: React.FC & {
   return (
     <nav className="py-2 w-16 border-r border-solid border-0 border-gray-200 flex flex-col items-center justify-between">
       <div className="space-y-4">
-        <Link to="/" className="flex">
+        <Link href="/" className="flex">
           {icon && <img className="h-10 w-10" src={icon} alt="" />}
         </Link>
         {menuItems

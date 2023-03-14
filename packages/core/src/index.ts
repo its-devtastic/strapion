@@ -25,10 +25,3 @@ export type { StrapionPlugin } from "./types/plugin";
 
 // Re-exports
 export { useTranslation } from "react-i18next";
-export {
-  Link,
-  useNavigate,
-  useParams,
-  useSearchParams,
-  useHref,
-} from "react-router-dom";

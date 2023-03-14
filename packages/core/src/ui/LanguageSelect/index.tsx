@@ -4,8 +4,6 @@ import classNames from "classnames";
 import { useTranslation } from "react-i18next";
 import * as R from "ramda";
 
-import "flag-icons/css/flag-icons.min.css";
-
 import useStrapi from "../../hooks/useStrapi";
 
 const LanguageSelect: React.FC<SelectProps> = ({
