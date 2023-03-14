@@ -1,9 +1,16 @@
 import React from "react";
-import { LoadingOutlined } from "@ant-design/icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { Spin } from "antd";
 
-const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
+const icon = (
+  <FontAwesomeIcon
+    icon={faSpinner}
+    style={{ fontSize: 24 }}
+    className="animate-spin"
+  />
+);
 
-const Spinner: React.FC = () => <Spin indicator={antIcon} />;
+const Spinner: React.FC = () => <Spin indicator={icon} />;
 
 export default Spinner;
