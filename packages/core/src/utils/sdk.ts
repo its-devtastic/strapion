@@ -9,12 +9,18 @@ export class StrapiSdk {
   public apiUrl: string;
   public http: AxiosInstance;
   public contentTypes: ContentType[] = [];
+  public authenticated: boolean = false;
   constructor(apiUrl: string) {
     this.apiUrl = apiUrl;
     this.http = axios.create({ baseURL: apiUrl });
   }
-  public setAuthorization(token: string) {
-    this.http.defaults.headers["Authorization"] = `Bearer ${token}`;
+  public setAuthorization(token: string | null) {
+    if (token) {
+      this.http.defaults.headers["Authorization"] = `Bearer ${token}`;
+    } else {
+      delete this.http.defaults.headers["Authorization"];
+    }
+    this.authenticated = Boolean(token);
   }
   public async getContentTypes() {
     const {

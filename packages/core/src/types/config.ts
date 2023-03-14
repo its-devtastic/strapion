@@ -12,6 +12,7 @@ export interface StrapionConfig {
   contentTypes: ContentTypeConfig[];
   routes: RouteObject[];
   theme: Partial<ThemeConfig>;
+  i18n: Record<string, Record<"translation", Record<string, string>>>;
   plugins: StrapionPlugin[];
 }
 

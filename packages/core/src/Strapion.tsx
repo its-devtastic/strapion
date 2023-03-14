@@ -37,6 +37,14 @@ const Strapion: React.FC<StrapionConfigWithOptionals> = (props) => {
     plugins: [],
     contentTypes: [],
     theme: {},
+    i18n: {
+      en: {
+        translation: en,
+      },
+      nl: {
+        translation: en,
+      },
+    },
     ...props,
   };
   const configAfterPlugins = configWithDefaults.plugins.reduce(
@@ -85,14 +93,7 @@ const Strapion: React.FC<StrapionConfigWithOptionals> = (props) => {
       interpolation: {
         escapeValue: false,
       },
-      resources: {
-        en: {
-          translation: en,
-        },
-        nl: {
-          translation: en,
-        },
-      },
+      resources: configAfterPlugins.i18n,
     });
   });
 
