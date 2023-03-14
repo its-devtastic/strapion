@@ -1,6 +1,6 @@
 {
   "name": "@strapion/content-manager",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Content Manager plugin for Strapion.",
   "source": "src/index.tsx",
   "main": "dist/main.js",
@@ -25,7 +25,6 @@
     "@fortawesome/fontawesome-svg-core": "^6.3.0",
     "@fortawesome/free-solid-svg-icons": "^6.3.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "@strapion/core": "^0.4.3",
     "ramda": "^0.28.0",
     "react-use": "^17.4.0"
   },
@@ -39,6 +38,7 @@
     "typescript": "^4.9.5"
   },
   "peerDependencies": {
+    "@strapion/core": "^0.4.3",
     "antd": "^5.3.1",
     "formik": "^2.2.9",
     "react": "^18.2.0",
