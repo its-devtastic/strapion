@@ -15,3 +15,6 @@ export { default as StrapionProvider } from "./providers/StrapionProvider";
 export { default as useSession } from "./hooks/useSession";
 export { default as useStrapi } from "./hooks/useStrapi";
 export { default as useStrapion } from "./hooks/useStrapion";
+
+// Enums
+export { InjectionZone } from "./types/config";

@@ -1,17 +1,16 @@
 {
   "name": "@strapion/core",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Strapion core components.",
   "source": "src/index.ts",
   "main": "dist/main.js",
   "module": "dist/module.js",
   "types": "dist/types.d.ts",
-  "private": false,
   "scripts": {
     "watch": "parcel watch",
     "build": "parcel build",
-    "css:watch": "tailwindcss -i ./src/styles.css -o ./dist/strapion.css --watch",
-    "css:build": "tailwindcss -i ./src/styles.css -o ./dist/strapion.css --minify"
+    "css:watch": "tailwindcss -i ./src/styles.css -o ./dist/styles.css --watch",
+    "css:build": "tailwindcss -i ./src/styles.css -o ./dist/styles.css --minify"
   },
   "license": "MIT",
   "author": "Devtastic <hi@devtastic.build>",
@@ -39,7 +38,6 @@
     "react-router-dom": "^6.8.2",
     "react-use": "^17.4.0",
     "string-to-color": "^2.2.2",
-    "url-pattern": "^1.0.3",
     "yup": "^1.0.2",
     "zustand": "^4.3.6"
   },

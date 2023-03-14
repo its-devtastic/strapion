@@ -36,3 +36,5 @@ next-env.d.ts
 /demo/
 /packages/core/.parcel-cache/
 /packages/core/dist/
+/packages/content-manager/.parcel-cache/
+/packages/content-manager/dist/
