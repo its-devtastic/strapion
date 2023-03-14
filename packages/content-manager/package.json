@@ -1,17 +1,8 @@
 {
   "name": "@strapion/content-manager",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "description": "Content Manager plugin for Strapion.",
-  "source": "src/index.tsx",
-  "main": "dist/main.js",
-  "module": "dist/module.js",
-  "types": "dist/types.d.ts",
-  "scripts": {
-    "watch": "parcel watch",
-    "build": "parcel build",
-    "css:watch": "tailwindcss -i ./src/styles.css -o ./dist/styles.css --watch",
-    "css:build": "tailwindcss -i ./src/styles.css -o ./dist/styles.css --minify"
-  },
+  "main": "src/index.tsx",
   "license": "MIT",
   "author": "Devtastic <hi@devtastic.co>",
   "maintainers": [
@@ -38,8 +29,9 @@
     "typescript": "^4.9.5"
   },
   "peerDependencies": {
-    "@strapion/core": "^0.4.4",
+    "@strapion/core": "^0.5.0",
     "antd": "^5.3.1",
+    "next": "^13.2.4",
     "formik": "^2.2.9",
     "react": "^18.2.0"
   }

@@ -5,6 +5,7 @@ import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import * as R from "ramda";
 import { useAsync } from "react-use";
 import { Field, Formik } from "formik";
+import Link from "next/link";
 
 import {
   useStrapion,
@@ -13,13 +14,10 @@ import {
   CalendarTime,
   LanguageSelect,
   useTranslation,
-  Link,
-  useParams,
 } from "@strapion/core";
 
-const DetailScreen: React.FC = () => {
+const DetailScreen: React.FC = ({ params }: any) => {
   const { t } = useTranslation();
-  const params = useParams<"apiID" | "id">();
   const apiID = params.apiID ?? "";
   const { contentTypes, sdk } = useStrapi();
   const contentType = contentTypes.find(R.whereEq({ apiID }));
@@ -41,7 +39,7 @@ const DetailScreen: React.FC = () => {
             <div className="mb-12 flex items-center justify-between">
               <div>
                 <Link
-                  to={`/content-manager/${apiID}`}
+                  href={`/content-manager/${apiID}`}
                   className="text-indigo-500 no-underline text-sm space-x-2"
                 >
                   <FontAwesomeIcon icon={faArrowLeft} />

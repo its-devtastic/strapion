@@ -1,6 +1,7 @@
 import React from "react";
 import * as R from "ramda";
-import { useStrapi, useStrapion, useTranslation, Link } from "@strapion/core";
+import Link from "next/link";
+import { useStrapi, useStrapion, useTranslation } from "@strapion/core";
 
 const ContentManagerMenu: React.FC<{
   groups: { label: string; items: string[] }[];
@@ -29,7 +30,7 @@ const ContentManagerMenu: React.FC<{
                   return (
                     <Link
                       key={apiID}
-                      to={`/content-manager/${apiID}`}
+                      href={`/content-manager/${apiID}`}
                       className="group flex gap-2 hover:bg-slate-100 rounded-lg p-3"
                     >
                       {custom?.icon && (

@@ -1,7 +1,7 @@
 import React from "react";
 import * as R from "ramda";
 
-import { InjectionZoneEntry, StrapionConfig } from "@strapion/core/dist/types";
+import type { InjectionZoneEntry, StrapionConfig } from "@strapion/core";
 
 import MainMenuItem from "./ui/MainMenuItem";
 import ListScreen from "./pages/ListScreen";

@@ -8,19 +8,17 @@ import {
   Spinner,
   CalendarTime,
   useTranslation,
-  useNavigate,
-  useParams,
 } from "@strapion/core";
 import { Formik } from "formik";
+import { useRouter } from "next/navigation";
 
 import { SORTABLE_FIELD_TYPES } from "../../utils/constants";
 
 import FilterToolbar from "./FilterToolbar";
 
-const ListScreen: React.FC = () => {
+const ListScreen: React.FC = ({ params }: any) => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
-  const params = useParams<"apiID">();
+  const router = useRouter();
   const apiID = params.apiID ?? "";
   const { contentTypes, sdk } = useStrapi();
   const contentType = contentTypes.find(R.whereEq({ apiID }));
@@ -65,7 +63,8 @@ const ListScreen: React.FC = () => {
             rowKey="id"
             showSorterTooltip={false}
             onRow={(record) => ({
-              onClick: () => navigate(`/content-manager/article/${record.id}`),
+              onClick: () =>
+                router.push(`/content-manager/article/${record.id}`),
             })}
             rowClassName="cursor-pointer"
             columns={[
