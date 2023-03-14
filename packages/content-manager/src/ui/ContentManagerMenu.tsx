@@ -1,8 +1,6 @@
 import React from "react";
 import * as R from "ramda";
-import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
-import { useStrapi, useStrapion } from "@strapion/core";
+import { useStrapi, useStrapion, useTranslation, Link } from "@strapion/core";
 
 const ContentManagerMenu: React.FC<{
   groups: { label: string; items: string[] }[];

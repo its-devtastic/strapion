@@ -3,10 +3,8 @@ import { Badge, Button, Card, Dropdown, Image, Input } from "antd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import * as R from "ramda";
-import { useTranslation } from "react-i18next";
-import { useAsync, useEffectOnce } from "react-use";
+import { useAsync } from "react-use";
 import { Field, Formik } from "formik";
-import { Link, useParams } from "react-router-dom";
 
 import {
   useStrapion,
@@ -14,6 +12,9 @@ import {
   Spinner,
   CalendarTime,
   LanguageSelect,
+  useTranslation,
+  Link,
+  useParams,
 } from "@strapion/core";
 
 const DetailScreen: React.FC = () => {

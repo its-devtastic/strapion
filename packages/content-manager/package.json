@@ -1,6 +1,6 @@
 {
   "name": "@strapion/content-manager",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Content Manager plugin for Strapion.",
   "source": "src/index.tsx",
   "main": "dist/main.js",
@@ -38,11 +38,9 @@
     "typescript": "^4.9.5"
   },
   "peerDependencies": {
-    "@strapion/core": "^0.4.3",
+    "@strapion/core": "^0.4.4",
     "antd": "^5.3.1",
     "formik": "^2.2.9",
-    "react": "^18.2.0",
-    "react-i18next": "^12.2.0",
-    "react-router-dom": "^6.9.0"
+    "react": "^18.2.0"
   }
 }
