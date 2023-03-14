@@ -1,5 +1,6 @@
 import React from "react";
-import { FolderFilled } from "@ant-design/icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFolder } from "@fortawesome/free-solid-svg-icons";
 import { Popover } from "antd";
 
 import { MainMenu } from "@strapion/core";
@@ -16,7 +17,7 @@ const MainMenuItem: React.FC<{
     placement="rightTop"
   >
     <MainMenu.Item>
-      <FolderFilled />
+      <FontAwesomeIcon icon={faFolder} />
     </MainMenu.Item>
   </Popover>
 );

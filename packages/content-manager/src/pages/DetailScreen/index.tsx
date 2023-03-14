@@ -1,11 +1,12 @@
 import React from "react";
 import { Badge, Button, Card, Dropdown, Image, Input } from "antd";
-import { ArrowLeftOutlined } from "@ant-design/icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import * as R from "ramda";
 import { useTranslation } from "react-i18next";
-import { useEffectOnce } from "react-use";
+import { useAsync, useEffectOnce } from "react-use";
 import { Field, Formik } from "formik";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import {
   useStrapion,
@@ -15,27 +16,22 @@ import {
   LanguageSelect,
 } from "@strapion/core";
 
-import useContentDetailManager from "../../hooks/useContentDetailManager";
-
-const DetailScreen: React.FC<{
-  params: { apiID: string; id: number };
-}> = ({ params }) => {
+const DetailScreen: React.FC = () => {
   const { t } = useTranslation();
-  const apiID = params.apiID;
-  const { contentTypes } = useStrapi();
-  const { data, fetch } = useContentDetailManager();
+  const params = useParams<"apiID" | "id">();
+  const apiID = params.apiID ?? "";
+  const { contentTypes, sdk } = useStrapi();
   const contentType = contentTypes.find(R.whereEq({ apiID }));
-  const contentTypeConfig = useStrapion((state) =>
-    state.config.contentTypes.find(R.whereEq({ apiID }))
-  );
+  const config = useStrapion();
+  const contentTypeConfig = config.contentTypes.find(R.whereEq({ apiID }));
   const hasDraftState = contentType?.options.draftAndPublish;
 
-  useEffectOnce(() => {
-    fetch(apiID, params.id);
-  });
+  const { value } = useAsync(async () => {
+    return sdk.getOne(apiID, Number(params.id));
+  }, []);
 
-  return contentTypeConfig && contentType && data ? (
-    <Formik initialValues={data} onSubmit={() => {}}>
+  return contentTypeConfig && contentType && value ? (
+    <Formik initialValues={value} onSubmit={() => {}}>
       {({ values }) => {
         const { side, main, coverImage } = contentTypeConfig.fields ?? {};
 
@@ -44,10 +40,10 @@ const DetailScreen: React.FC<{
             <div className="mb-12 flex items-center justify-between">
               <div>
                 <Link
-                  href={`/content-manager/${apiID}`}
+                  to={`/content-manager/${apiID}`}
                   className="text-indigo-500 no-underline text-sm space-x-2"
                 >
-                  <ArrowLeftOutlined />
+                  <FontAwesomeIcon icon={faArrowLeft} />
                   <span>{t("common.back")}</span>
                 </Link>
                 <h1>
@@ -80,7 +76,7 @@ const DetailScreen: React.FC<{
                   )
                 }
               >
-                {contentTypeConfig.fields?.side?.map(({ path, label }) => {
+                {contentTypeConfig.fields?.side?.map(({ path, label }: any) => {
                   return (
                     <div key={path}>
                       {label && (

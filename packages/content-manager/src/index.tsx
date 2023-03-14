@@ -5,7 +5,7 @@ import {
   InjectionZone,
   InjectionZoneEntry,
   StrapionConfig,
-} from "@strapion/core/types/config";
+} from "@strapion/core";
 
 import MainMenuItem from "./ui/MainMenuItem";
 import ListScreen from "./pages/ListScreen";
@@ -16,10 +16,10 @@ export default function contentManagerPlugin(
 ) {
   return (config: StrapionConfig): StrapionConfig => {
     return R.evolve({
-      pages: R.mergeLeft({
-        "/content-manager/:apiID": ListScreen,
-        "/content-manager/:apiID/:id": DetailScreen,
-      }),
+      routes: R.concat([
+        { path: "/content-manager/:apiID", element: <ListScreen /> },
+        { path: "/content-manager/:apiID/:id", element: <DetailScreen /> },
+      ]),
       zones: R.append<InjectionZoneEntry>({
         zone: InjectionZone.MainMenuTop,
         weight: 0,
