@@ -19,6 +19,11 @@ export { default as useStrapion } from "./hooks/useStrapion";
 // Enums
 export { InjectionZone } from "./types/config";
 
+// Types
+export type { StrapionConfig, InjectionZoneEntry } from "./types/config";
+export type { StrapionPlugin } from "./types/plugin";
+
+// Re-exports
 export { useTranslation } from "react-i18next";
 export {
   Link,
