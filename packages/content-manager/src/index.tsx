@@ -1,11 +1,7 @@
 import React from "react";
 import * as R from "ramda";
 
-import {
-  InjectionZone,
-  InjectionZoneEntry,
-  StrapionConfig,
-} from "@strapion/core";
+import { InjectionZoneEntry, StrapionConfig } from "@strapion/core/dist/types";
 
 import MainMenuItem from "./ui/MainMenuItem";
 import ListScreen from "./pages/ListScreen";
@@ -21,7 +17,7 @@ export default function contentManagerPlugin(
         { path: "/content-manager/:apiID/:id", element: <DetailScreen /> },
       ]),
       zones: R.append<InjectionZoneEntry>({
-        zone: InjectionZone.MainMenuTop,
+        zone: "mainMenu::top",
         weight: 0,
         render() {
           return <MainMenuItem groups={groups} />;
