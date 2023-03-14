@@ -1,3 +1,4 @@
 {
-  "login.login_button": "Log in"
+  "login.login_button": "Log in",
+  "user_menu.log_out": "Log out"
 }

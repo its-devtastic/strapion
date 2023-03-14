@@ -61,22 +61,36 @@ const Strapion: React.FC<StrapionConfigWithOptionals> = (props) => {
       element: <Root />,
       children: [...configAfterPlugins.routes],
     },
-    { path: "/login", element: <Login /> },
+    {
+      path: "/login",
+      loader: async () => {
+        if (auth) {
+          return new Response("", {
+            status: 302,
+            headers: {
+              Location: "/",
+            },
+          });
+        }
+        return null;
+      },
+      element: <Login />,
+    },
   ]);
 
   useEffectOnce(() => {
     i18n.use(initReactI18next).init({
       fallbackLng: "en",
-      defaultNS: "translations",
+      defaultNS: "translation",
       interpolation: {
         escapeValue: false,
       },
       resources: {
         en: {
-          translations: en,
+          translation: en,
         },
         nl: {
-          translations: en,
+          translation: en,
         },
       },
     });

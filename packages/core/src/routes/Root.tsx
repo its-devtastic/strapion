@@ -1,14 +1,19 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 
+import MainMenu from "../ui/MainMenu";
+import AppHeader from "../ui/AppHeader";
+
 const Root: React.FC = () => {
   return (
-    <div>
-      <div>
-        <div>MM</div>
-        <div>
+    <div className="h-screen flex">
+      <MainMenu />
+      <div className="flex-1 flex flex-col">
+        <AppHeader />
+
+        <main className="flex-1 overflow-y-auto">
           <Outlet />
-        </div>
+        </main>
       </div>
     </div>
   );

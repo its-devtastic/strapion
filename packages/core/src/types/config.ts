@@ -28,4 +28,7 @@ export interface InjectionZoneEntry {
 export enum InjectionZone {
   MainMenuTop = "mainMenu::top",
   MainMenuBottom = "mainMenu::bottom",
+  AppHeaderLeft = "appHeadeer::left",
+  AppHeaderRight = "appHeadeer::center",
+  AppHeaderCenter = "appHeadeer::right",
 }

@@ -24,7 +24,7 @@ const MainMenu: React.FC & {
   );
 
   return (
-    <nav className="py-3 w-16 bg-slate-100 flex flex-col items-center justify-between">
+    <nav className="py-2 w-16 border-r border-solid border-0 border-gray-200 flex flex-col items-center justify-between">
       <div className="space-y-4">
         <Link to="/" className="flex">
           {icon && <img className="h-10 w-10" src={icon} alt="" />}
